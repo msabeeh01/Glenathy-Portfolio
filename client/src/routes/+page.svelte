@@ -62,6 +62,7 @@
 		justify-items: center;
 		align-items: center;
         overflow: hidden;
+		background-color: #e6e9d3;
 	}
 
 	.grid > div {

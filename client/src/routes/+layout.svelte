@@ -1,19 +1,32 @@
 <!-- FILEPATH: /D:/Fall Semester 2023/Portfolio Projects/Glenathy-Portfolio/client/src/routes/_layout.svelte -->
 
 <script>
-	export let title = 'My Website';
+	import { page } from '$app/stores';
+
+	export let title = 'Glen Chan-Choong';
+	
+	let showMenu = false;
+	function toggleMenu() {
+		showMenu = !showMenu;
+	}
 </script>
 
-<!-- <header>
-	<h1>{title}</h1>
-	<nav>
-		<ul>
-			<li><a href="/">Home</a></li>
-			<li><a href="/about">About</a></li>
-			<li><a href="/contact">Contact</a></li>
-		</ul>
-	</nav>
-</header> -->
+<!-- navbar for everything but landing page -->
+{#if $page.url.pathname !== '/'}
+	<header>
+		<h1>{title}</h1>
+		<nav>
+			<!-- svelte-ignore a11y-click-events-have-key-events -->
+			<div class="hamburger-menu" on:click={toggleMenu} role="button" tabindex="0">
+				<div><a href="/" tabindex="0" class:active={$page.url.pathname === '/'}>Home</a></div>
+				<div><a href="/about" tabindex="0" class:active={$page.url.pathname === '/about'}>About</a></div>
+				<div><a href="/work" tabindex="0" class:active={$page.url.pathname === '/work'}>Design</a></div>
+				<div><a href="/contact" tabindex="0" class:active={$page.url.pathname === '/contact'}>Contact</a></div>
+				<div><a href="/contact" tabindex="0" class:active={$page.url.pathname === '/contact'}>Photography and Video</a></div>
+			</div>
+		</nav>
+	</header>
+{/if}
 
 <main class="container">
 	<slot />
@@ -25,9 +38,13 @@
 
 <style>
 	.container {
-		background-color: #E6E9D3;
-        display:flex;
-    	height: 100vh;
+		background-color: white;
+		display: flex;
+		height: 100vh;
+	}
+
+	.active{
+		color:black
 	}
 
 	/* Add your CSS styles here */
@@ -36,27 +53,21 @@
 		justify-content: space-between;
 		align-items: center;
 		padding: 1rem;
-		background-color: #333;
-		color: #fff;
+		background-color: #fbffe0;
+		color: #444444;
 	}
 
-	nav ul {
+	.hamburger-menu{
 		display: flex;
-		list-style: none;
-		margin: 0;
-		padding: 0;
+		flex-direction: row;
+		gap:2rem;
 	}
-
-	nav li {
-		margin-right: 1rem;
-	}
+	
 
 	nav a {
-		color: #fff;
+		color: #BBBBBB;
 		text-decoration: none;
-	}
-
-	main {
+		font-size: 30px;
 	}
 
 	footer {
