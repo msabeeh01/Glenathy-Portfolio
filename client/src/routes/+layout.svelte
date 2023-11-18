@@ -2,6 +2,7 @@
 
 <script>
 	import { page } from '$app/stores';
+	import '../app.css'
 
 	export let title = 'Glen Chan-Choong';
 	
@@ -22,13 +23,13 @@
 				<div><a href="/about" tabindex="0" class:active={$page.url.pathname === '/about'}>About</a></div>
 				<div><a href="/work" tabindex="0" class:active={$page.url.pathname === '/work'}>Design</a></div>
 				<div><a href="/contact" tabindex="0" class:active={$page.url.pathname === '/contact'}>Contact</a></div>
-				<div><a href="/contact" tabindex="0" class:active={$page.url.pathname === '/contact'}>Photography and Video</a></div>
+				<div><a href="/media" tabindex="0" class:active={$page.url.pathname === '/media'}>Photography and Video</a></div>
 			</div>
 		</nav>
 	</header>
 {/if}
 
-<main class="container">
+<main class="pageCon">
 	<slot />
 </main>
 
@@ -37,10 +38,13 @@
 </footer> -->
 
 <style>
-	.container {
+	.pageCon {
 		background-color: white;
 		display: flex;
+		flex-direction: column;
+		align-items: center;
 		height: 100vh;
+		justify-content: center;
 	}
 
 	.active{
