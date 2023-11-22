@@ -15,7 +15,7 @@
 
 </script>
 
-<div class="grid">
+<div class="grid h-screen">
 	<div class="text">
 		<p>{name}</p>
 

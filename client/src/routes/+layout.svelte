@@ -2,28 +2,35 @@
 
 <script>
 	import { page } from '$app/stores';
-	import '../app.css'
+	import '../app.css';
 
 	export let title = 'Glen Chan-Choong';
-	
-	let showMenu = false;
-	function toggleMenu() {
-		showMenu = !showMenu;
-	}
+
 </script>
 
 <!-- navbar for everything but landing page -->
 {#if $page.url.pathname !== '/'}
-	<header>
+	<header class="flex">
 		<h1>{title}</h1>
 		<nav>
-			<!-- svelte-ignore a11y-click-events-have-key-events -->
-			<div class="hamburger-menu" on:click={toggleMenu} role="button" tabindex="0">
-				<div><a href="/" tabindex="0" class:active={$page.url.pathname === '/'}>Home</a></div>
-				<div><a href="/about" tabindex="0" class:active={$page.url.pathname === '/about'}>About</a></div>
-				<div><a href="/work" tabindex="0" class:active={$page.url.pathname === '/work'}>Design</a></div>
-				<div><a href="/contact" tabindex="0" class:active={$page.url.pathname === '/contact'}>Contact</a></div>
-				<div><a href="/media" tabindex="0" class:active={$page.url.pathname === '/media'}>Photography and Video</a></div>
+			<div class="nav-links" >
+				<a href="/" class:active={$page.url.pathname === '/'}
+					>Home</a
+				>
+				<a
+					href="/about"
+					class:active={$page.url.pathname === '/about'}
+					>About</a
+				>
+				<a
+					href="/work"
+					class:active={$page.url.pathname === '/work'}
+					>Design</a
+				>
+				<a
+					href="/media"
+					class:active={$page.url.pathname === '/media'}>Photography and Video</a
+				>
 			</div>
 		</nav>
 	</header>
@@ -43,12 +50,16 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		height: 100vh;
-		justify-content: center;
+		height: 100%;
 	}
 
-	.active{
-		color:black
+	.pageCon > *{
+		margin-top: auto;
+		margin-bottom: auto;
+	}
+
+	.active {
+		color: black;
 	}
 
 	/* Add your CSS styles here */
@@ -61,17 +72,9 @@
 		color: #444444;
 	}
 
-	.hamburger-menu{
-		display: flex;
-		flex-direction: row;
-		gap:2rem;
-	}
-	
-
 	nav a {
-		color: #BBBBBB;
+		color: #bbbbbb;
 		text-decoration: none;
-		font-size: 30px;
 	}
 
 	footer {
@@ -80,4 +83,6 @@
 		color: #fff;
 		text-align: center;
 	}
+
+
 </style>

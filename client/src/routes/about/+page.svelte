@@ -3,8 +3,8 @@
     <h1>About</h1>
 </div>
 
-<div class="grid grid-cols-2">
-	<img src="https://cdn.myportfolio.com/7bf13fc8-be3c-4bd4-96b0-ae0f57e2689c/d6fbba74-1025-4e3e-8ebe-896d1c6aa7c8.jpg?h=23c60cf1935d94e7970655ddbb52b044" alt="hello"/>
+<div class="flex flex-col md:flex-row place-items-center ">
+	<img class="w-full md:w-1/2" src="https://cdn.myportfolio.com/7bf13fc8-be3c-4bd4-96b0-ae0f57e2689c/d6fbba74-1025-4e3e-8ebe-896d1c6aa7c8.jpg?h=23c60cf1935d94e7970655ddbb52b044" alt="hello"/>
     <p>
         Hi there! My name is Glen Chan-Choong and I'm a third year Graphic Communications Management
         student at Toronto Metropolitan University (Formerly known as Ryerson University), pursuing a
