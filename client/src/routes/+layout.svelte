@@ -11,23 +11,26 @@
 <!-- navbar for everything but landing page -->
 {#if $page.url.pathname !== '/'}
 	<header class="flex">
-		<h1>{title}</h1>
-		<nav>
-			<div class="nav-links" >
-				<a href="/" class:active={$page.url.pathname === '/'}
+		<h1 class="text-3xl font-bold">{title}</h1>
+		<nav class="font-bold">
+			<div class="flex gap-5" >
+				<a class="hover:bg-white text-[#bbbbbb] transition hover:text-black rounded-md px-2 py-1" href="/" class:active={$page.url.pathname === '/'}
 					>Home</a
 				>
-				<a
+				<a	
+				class="hover:bg-white text-[#bbbbbb] transition hover:text-black rounded-md px-2 py-1"
 					href="/about"
 					class:active={$page.url.pathname === '/about'}
 					>About</a
 				>
 				<a
+				class="hover:bg-white text-[#bbbbbb] transition hover:text-black rounded-md px-2 py-1"
 					href="/work"
 					class:active={$page.url.pathname === '/work'}
 					>Design</a
 				>
 				<a
+				class="hover:bg-white text-[#bbbbbb] transition hover:text-black rounded-md px-2 py-1"
 					href="/media"
 					class:active={$page.url.pathname === '/media'}>Photography and Video</a
 				>
@@ -72,10 +75,6 @@
 		color: #444444;
 	}
 
-	nav a {
-		color: #bbbbbb;
-		text-decoration: none;
-	}
 
 	footer {
 		padding: 1rem;

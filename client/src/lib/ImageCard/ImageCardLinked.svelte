@@ -3,31 +3,31 @@
     export let title
     export let year
     export let image
+    export let href
 </script>
 
-<div class="item hover:scale-105 transition duration-300 hover:bg-[#FBFFE0] hover:shadow-sm rounded-md">
+<div class="item hover:scale-105 transition duration-300 hover:bg-[#FBFFE0] hover:shadow-sm font-bold rounded-md">
+    <a href={href}>
     <img src={image} alt="image alt" class="rounded-t"/>
     <div class="text">
-        <p class="font-bold">{title}</p>
-        <p class="text-sm pt-2">{year}</p>
+        <p>{title}</p>
+        <p class="text-sm">{year}</p>
     </div>
+    </a>
 </div>
 
 <style>
-    h1 {
-        text-align: center;
-    }	
-    .item {
+	.item {
 		display: flex;
 		align-items: center;
-        justify-content: center;
+		justify-content: center;
 		flex-direction: column;
 		width: 100%;
 	}
 
-	.item > img {
+	img {
 		width: 100%;
-		height: auto;
+		height: 400px;
 	}
 
 	.text {

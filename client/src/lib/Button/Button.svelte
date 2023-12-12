@@ -4,7 +4,7 @@
 </script>
 
 <a href={link}>
-	<button>
+	<button class="hover:scale-105 transition duration-300 hover:bg-[#FBFFE0] hover:text-black hover:shadow-sm">
 		{text}
 	</button>
 </a>
