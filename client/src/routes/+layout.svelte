@@ -14,23 +14,23 @@
 		<h1 class="text-3xl font-bold">{title}</h1>
 		<nav class="font-bold">
 			<div class="flex gap-5" >
-				<a class="hover:bg-white text-[#bbbbbb] transition hover:text-black rounded-md px-2 py-1" href="/" class:active={$page.url.pathname === '/'}
+				<a class="hover:bg-white text-[#F7D5B1] transition hover:text-black rounded-md px-2 py-1" href="/" class:active={$page.url.pathname === '/'}
 					>Home</a
 				>
 				<a	
-				class="hover:bg-white text-[#bbbbbb] transition hover:text-black rounded-md px-2 py-1"
+				class="hover:bg-white text-[#F7D5B1] transition hover:text-black rounded-md px-2 py-1"
 					href="/about"
 					class:active={$page.url.pathname === '/about'}
 					>About</a
 				>
 				<a
-				class="hover:bg-white text-[#bbbbbb] transition hover:text-black rounded-md px-2 py-1"
+				class="hover:bg-white text-[#F7D5B1] transition hover:text-black rounded-md px-2 py-1"
 					href="/work"
 					class:active={$page.url.pathname === '/work'}
 					>Design</a
 				>
 				<a
-				class="hover:bg-white text-[#bbbbbb] transition hover:text-black rounded-md px-2 py-1"
+				class="hover:bg-white text-[#F7D5B1] transition hover:text-black rounded-md px-2 py-1"
 					href="/media"
 					class:active={$page.url.pathname === '/media'}>Photography and Video</a
 				>
@@ -49,7 +49,7 @@
 
 <style>
 	.pageCon {
-		background-color: white;
+		background-color: #1d2635;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -62,7 +62,7 @@
 	}
 
 	.active {
-		color: black;
+		color: #F7D5B1;
 	}
 
 	/* Add your CSS styles here */
@@ -71,8 +71,8 @@
 		justify-content: space-between;
 		align-items: center;
 		padding: 1rem;
-		background-color: #fbffe0;
-		color: #444444;
+		background-color: #2C3950;
+		color: #F7D5B1;
 	}
 
 

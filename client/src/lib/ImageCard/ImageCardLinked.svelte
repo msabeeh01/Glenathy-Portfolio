@@ -1,19 +1,21 @@
 <script>
-    //props
-    export let title
-    export let year
-    export let image
-    export let href
+	//props
+	export let title;
+	export let year;
+	export let image;
+	export let href;
 </script>
 
-<div class="item hover:scale-105 transition duration-300 hover:bg-[#FBFFE0] hover:shadow-sm font-bold rounded-md">
-    <a href={href}>
-    <img src={image} alt="image alt" class="rounded-t"/>
-    <div class="text">
-        <p>{title}</p>
-        <p class="text-sm">{year}</p>
-    </div>
-    </a>
+<div
+	class="item hover:scale-105 transition bg-[#2C3950] duration-300 text-[#F7D5B1] hover:text-black hover:bg-[#F7D5B1] shadow-xl hover:shadow-lg font-bold rounded-xl"
+>
+	<a {href} class="w-full">
+		<img src={image} alt="image alt" class="rounded-t" />
+		<div class="text">
+			<p>{title}</p>
+			<p class="text-sm">{year}</p>
+		</div>
+	</a>
 </div>
 
 <style>
