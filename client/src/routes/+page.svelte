@@ -83,7 +83,8 @@
         font-weight: 900;
         font-size: 69px;
         margin:0;
-        font-family: "Museo Slab W00 900";
+		font-family: 'Akira', sans-serif;
+        /* font-family: "Museo Slab W00 900"; */
         color:#F7D5B1 ;
     }
 

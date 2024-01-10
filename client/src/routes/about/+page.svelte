@@ -18,6 +18,7 @@
 <style>
     p{
         font-size: 20px;
+        font-family: 'Courier New', Courier, monospace; 
         padding: 20px;
     }
 </style>
