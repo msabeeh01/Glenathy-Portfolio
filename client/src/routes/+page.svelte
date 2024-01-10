@@ -62,7 +62,7 @@
 		justify-items: center;
 		align-items: center;
         overflow: hidden;
-		background-color: #e6e9d3;
+		background-color: #1d2635;
 	}
 
 	.grid > div {
@@ -84,7 +84,7 @@
         font-size: 69px;
         margin:0;
         font-family: "Museo Slab W00 900";
-        color:#444444
+        color:#F7D5B1 ;
     }
 
 	.image img {

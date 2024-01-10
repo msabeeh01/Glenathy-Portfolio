@@ -16,8 +16,8 @@
 <style>
 	button {
 		border-radius: 100px;
-		color: black;
-		background-color: white;
+		color: #F7D5B1;
+		background-color: #2C3950;
 		line-height: 40px;
 		margin: 0 auto;
 		font-weight: bold;

@@ -11,7 +11,9 @@
 <!-- navbar for everything but landing page -->
 {#if $page.url.pathname !== '/'}
 	<header class="flex">
-		<h1 class="text-3xl font-bold">{title}</h1>
+		<a href="/">
+		<h1 class="text-3xl font-bold transition-all hover:scale-105">{title}</h1>
+	</a>
 		<nav class="font-bold">
 			<div class="flex gap-5" >
 				<a class="hover:bg-white text-[#F7D5B1] transition hover:text-black rounded-md px-2 py-1" href="/" class:active={$page.url.pathname === '/'}
