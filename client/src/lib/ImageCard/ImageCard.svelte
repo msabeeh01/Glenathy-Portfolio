@@ -5,9 +5,9 @@
     export let image
 </script>
 
-<div class="item hover:scale-105 transition duration-300 bg-[#2C3950] shadow-xl hover:text-black text-[#F7D5B1] hover:bg-[#F7D5B1] hover:shadow-sm rounded-md">
-    <img src={image} alt="image alt" class="rounded-t"/>
-    <div class="text">
+<div class="md:h-[500px] item hover:scale-105 transition duration-300 bg-[#2C3950] shadow-xl hover:text-black text-[#F7D5B1] hover:bg-[#F7D5B1] hover:shadow-sm rounded-md">
+    <img src={image} alt="image alt" class="rounded-t object-cover"/>
+    <div class="text text-[24px] p-6 w-full overflow-ellipsis break-words h-full flex flex-col justify-center">
         <p class="font-bold">{title}</p>
         <p class="text-sm pt-2">{year}</p>
     </div>
@@ -20,18 +20,8 @@
     .item {
 		display: flex;
 		align-items: center;
-        justify-content: center;
 		flex-direction: column;
 		width: 100%;
 	}
 
-	.item > img {
-		width: 100%;
-		height: auto;
-	}
-
-	.text {
-		font-size: 24px;
-		padding: 2rem;
-	}
 </style>
