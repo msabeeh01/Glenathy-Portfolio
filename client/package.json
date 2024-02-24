@@ -28,6 +28,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"aos": "^2.3.4",
 		"svelte-icons": "^2.1.0"
 	}
 }

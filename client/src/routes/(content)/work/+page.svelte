@@ -1,10 +1,17 @@
 <script>
 	//import the ImageCard component
 	import ImageCard from '$lib/ImageCard/ImageCard.svelte';
+	import { onMount } from 'svelte';
+	import AOS from 'aos';
+
+	onMount(() => {
+		AOS.init();
+	});
 </script>
 
 <div
-	class="flex flex-col place-items-center gap-10 sm:py-10 lg:py-0 text-center md:grid md:grid-cols-2 lg:grid-cols-3 w-[80%] h-full"
+	data-aos="fade-up"
+	class="flex flex-col place-items-center gap-10 sm:py-10 lg:py-0 text-center md:grid md:grid-cols-2 xl:grid-cols-3 h-full"
 >
 	<a href="/photoshop">
 		<ImageCard
@@ -23,10 +30,10 @@
 	</a>
 
 	<a href="/illustrator">
-	<ImageCard
-		image="https://cdn.myportfolio.com/7bf13fc8-be3c-4bd4-96b0-ae0f57e2689c/ae26f53b-04f8-46e4-98b4-cf4c83690a98_rwc_0x499x4576x3577x640.jpg?h=069edce2950937b768394dec7455fcef"
-		title="Illustrator Projects"
-		year="2021"
-	/>
+		<ImageCard
+			image="https://cdn.myportfolio.com/7bf13fc8-be3c-4bd4-96b0-ae0f57e2689c/ae26f53b-04f8-46e4-98b4-cf4c83690a98_rwc_0x499x4576x3577x640.jpg?h=069edce2950937b768394dec7455fcef"
+			title="Illustrator Projects"
+			year="2021"
+		/>
 	</a>
 </div>
