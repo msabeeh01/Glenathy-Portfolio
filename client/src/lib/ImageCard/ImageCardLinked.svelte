@@ -1,8 +1,14 @@
 <script>
+// @ts-nocheck
+
 	//props
+	// @ts-ignore
 	export let title;
+	// @ts-ignore
 	export let year;
+	// @ts-ignore
 	export let image;
+	// @ts-ignore
 	export let href;
 </script>
 

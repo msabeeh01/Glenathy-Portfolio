@@ -24,7 +24,7 @@
 <!-- children should be same width -->
 <div class="flex md:flex-row h-screen flex-col-reverse">
 	<div data-aos="fade-right" class="text w-full h-full">
-		<p>{name}</p>
+		<p class="">{name}</p>
 
 		<Button text="Enter" link="/work" />
 
@@ -75,6 +75,13 @@
 		font-family: 'Akira', sans-serif;
 		/* font-family: "Museo Slab W00 900"; */
 		color: #f7d5b1;
+	}
+
+	/* make the text responsive */
+	@media screen and (max-width: 600px) {
+		p {
+			font-size: 30px;
+		}
 	}
 
 	.image img {

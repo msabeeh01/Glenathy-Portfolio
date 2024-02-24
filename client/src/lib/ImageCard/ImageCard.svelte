@@ -1,8 +1,9 @@
 <script>
+    // @ts-nocheck
     //props
-    export let title
-    export let year
-    export let image
+    export let title;
+    export let year;
+    export let image;
 </script>
 
 <div class="md:h-[500px] item hover:scale-105 transition duration-300 bg-[#2C3950] shadow-xl hover:text-black text-[#F7D5B1] hover:bg-[#F7D5B1] hover:shadow-sm rounded-md">

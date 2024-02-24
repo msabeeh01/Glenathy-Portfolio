@@ -60,7 +60,7 @@ function toggleNav() {
   {/if}
 {/if}
 
-<main class="pageCon md:w-2/3">
+<main class="pageCon md:w-2/3 p-4">
 	<slot />
 </main>
 

@@ -1,4 +1,5 @@
 <script>
+	// @ts-nocheck
 	export let img;
 	export let title;
 	let showTitle = false;

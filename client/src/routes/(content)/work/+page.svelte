@@ -11,7 +11,7 @@
 
 <div
 	data-aos="fade-up"
-	class="flex flex-col place-items-center gap-10 sm:py-10 lg:py-0 text-center md:grid md:grid-cols-2 xl:grid-cols-3 h-full"
+	class="flex flex-col place-items-center gap-4 sm:py-10 lg:py-0 text-center md:grid md:grid-cols-2 xl:grid-cols-3 h-full"
 >
 	<a href="/photoshop">
 		<ImageCard

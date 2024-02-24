@@ -7,9 +7,9 @@
 	import album_cover from '$lib/digital_images/photoshop_images/Chan-Choong_Glen_Section4_CDCover.jpg';
 </script>
 
-<div class="flex flex-col place-items-center">
+<div class="flex flex-col h-full w-full place-items-center">
 	<h1 class="text-3xl font-bold text-[#F7D5B1]">Photoshop Projects</h1>
-	<div class="py-5 grid grid-cols-2 md:grid-cols-3 gap-4 w-2/3">
+	<div class="py-5 grid grid-cols-1 md:grid-cols-3 gap-4">
 		<!-- image with description when hovered -->
 		<!-- MasonryItem 5 times -->
 		<MasonryItem title="Text Effect Project: Spray Paint Effect" img={typography} />
