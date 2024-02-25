@@ -16,7 +16,7 @@
 	class="item hover:scale-105 transition bg-[#2C3950] duration-300 text-[#F7D5B1] hover:text-black hover:bg-[#F7D5B1] shadow-xl hover:shadow-lg font-bold rounded-xl"
 >
 	<a {href} class="w-full">
-		<img src={image} alt="image alt" class="rounded-t" />
+		<img src={image} alt="alt" class="rounded-t" />
 		<div class="text">
 			<p>{title}</p>
 			<p class="text-sm">{year}</p>

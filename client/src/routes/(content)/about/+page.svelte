@@ -8,13 +8,13 @@
 </script>
 
 <div class="flex flex-col h-full w-full">
-	<div data-aos="fade-up" class="flex justify-center items-center text-[#F7D5B1] pt-5 text-[50px]">
+	<div class="flex justify-center items-center text-[#F7D5B1] pt-5 text-[50px]">
 		<h1>About</h1>
 	</div>
 
 	<div
 		data-aos="fade-up"
-		class="flex bg-[#2C3950] gap-5 md:px-5 md:py-5 rounded-md flex-col md:flex-row place-items-center text-[#F7D5B1]"
+		class="shadow-2xl flex bg-[#2C3950] gap-5 md:px-5 md:py-5 rounded-md flex-col md:flex-row place-items-center text-[#F7D5B1]"
 	>
 			<img
 				class="w-full md:w-1/2 h-full object-cover rounded-md"

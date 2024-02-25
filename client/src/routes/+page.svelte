@@ -1,5 +1,5 @@
 <script>
-	import '../app.css'
+	import '../app.css';
 	// component imports
 	import Button from '$lib/Button/Button.svelte';
 	import IconButton from '$lib/IconButton/IconButton.svelte';
@@ -15,6 +15,8 @@
 	import { onMount } from 'svelte';
 	import AOS from 'aos';
 
+	import parking from '$lib/digital_images/film_images/parking.png';
+
 	onMount(() => {
 		AOS.init();
 	});
@@ -29,7 +31,7 @@
 		<Button text="Enter" link="/work" />
 
 		<div class="iconButtonWrapper">
-			<IconButton link="https://www.instagram.com/glenchanchoong/">
+			<IconButton link="https://www.linkedin.com/in/glen-chan-choong-59bb4a1a8/">
 				<IoLogoLinkedin />
 			</IconButton>
 
@@ -37,17 +39,16 @@
 				<IoLogoInstagram />
 			</IconButton>
 
-			<IconButton link="https://www.instagram.com/glenchanchoong/">
-				<IoIosMail />
-			</IconButton>
+			<!-- <a href="mailto:3JWpF@example.com">
+				<IconButton link="https://www.instagram.com/glenchanchoong/">
+					<IoIosMail />
+				</IconButton>
+			</a> -->
 		</div>
 	</div>
 
 	<div data-aos="fade-left" class="image w-full h-full">
-		<img
-			alt="donut and coffee place"
-			src="https://cdn.myportfolio.com/7bf13fc8-be3c-4bd4-96b0-ae0f57e2689c/5b23af0c-ec60-4c9a-84a6-d873664e0e9b_rwc_0x0x1783x1179x4096.png?h=a702da7ab03e39908a66c52e6fc85ef6"
-		/>
+		<img alt="donut and coffee place" src={parking} />
 	</div>
 </div>
 

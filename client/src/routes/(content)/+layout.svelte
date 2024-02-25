@@ -16,7 +16,7 @@ function toggleNav() {
 
 <!-- navbar for everything but landing page -->
 {#if $page.url.pathname !== '/'}
-  <header class="flex w-full">
+  <header class="flex w-full justify-between bg-[#2C3950] text-[#F7D5B1] p-4">
     <a href="/">
       <h1 class="text-3xl font-bold transition-all hover:scale-105">{title}</h1>
     </a>
@@ -51,7 +51,7 @@ function toggleNav() {
     </button>
   </header>
   {#if isNavOpen}
-    <nav data-aos="fade-right" class="flex flex-col w-full md:hidden">
+    <nav class="flex flex-col w-full md:hidden">
       <a class="block px-2 py-1 text-sm text-white bg-gray-900 rounded-md hover:bg-gray-700" href="/">Home</a>
       <a class="block px-2 py-1 text-sm text-white bg-gray-900 rounded-md hover:bg-gray-700" href="/about">About</a>
       <a class="block px-2 py-1 text-sm text-white bg-gray-900 rounded-md hover:bg-gray-700" href="/work">Design</a>
@@ -60,50 +60,17 @@ function toggleNav() {
   {/if}
 {/if}
 
-<main class="pageCon md:w-2/3 p-4">
+<main class="flex flex-col h-full items-center w-full md:w-2/3 p-4">
 	<slot />
 </main>
 
-<!-- <footer>
-	<p>&copy; {new Date().getFullYear()} My Website</p>
-</footer> -->
 
 <style>
-	.pageCon {
-		background-color: #1d2635;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		justify-content: center;
-		height: 100%;
-	}
-
-	.pageCon > *{
-		margin-top: auto;
-		margin-bottom: auto;
-	}
-
 	.active {
 		color: #F7D5B1;
 	}
 
-	/* Add your CSS styles here */
-	header {
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
-		padding: 1rem;
-		background-color: #2C3950;
-		color: #F7D5B1;
-	}
 
-
-	footer {
-		padding: 1rem;
-		background-color: #333;
-		color: #fff;
-		text-align: center;
-	}
 
 
 </style>
