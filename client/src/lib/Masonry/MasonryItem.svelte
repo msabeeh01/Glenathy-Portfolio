@@ -6,13 +6,6 @@
 	let showTitle = false;
 	let isModalOpen = false; // Variable to track the modal state
 
-	import {onMount} from 'svelte';
-	import AOS from 'aos';
-
-	onMount(() => {
-		
-		AOS.init();
-	})
 </script>
 
 <div
@@ -24,7 +17,7 @@
 	role="button"
 	tabindex="0"
 >
-	<div class="flex flex-col w-full justify-center" data-aos="fade-up">
+	<div class="flex flex-col w-full justify-center">
 		<button on:click={() => (isModalOpen = !isModalOpen)} class="">
 			<picture>
 				<img class="rounded-lg object-cover w-full" style="height: {height}px;" src={img} alt="" />
