@@ -6,7 +6,9 @@
 
 @font-face {
     font-family: 'Akira';
-    src: url('/Akira Expanded Demo.otf') format('truetype');
+    src: url('/Akira\ Expanded\ Demo.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
  }
 
 /* rest of the styles */
