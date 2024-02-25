@@ -20,7 +20,7 @@ function toggleNav() {
     <a href="/">
       <h1 class="text-3xl font-bold transition-all hover:scale-105">{title}</h1>
     </a>
-    <nav class="font-bold hidden md:flex">
+    <nav class="font-bold hidden items-center md:flex">
       <div class="flex gap-5 md:flex">
         <a class="hover:bg-white text-[#F7D5B1] transition hover:text-black rounded-md px-2 py-1" href="/" class:active={$page.url.pathname === '/'}
           >Home</a
