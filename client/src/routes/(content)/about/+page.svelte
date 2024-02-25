@@ -2,6 +2,8 @@
 	import { onMount } from 'svelte';
 	import AOS from 'aos';
 
+	import glensky from '$lib/digital_images/digital_images/glensky.png';
+
 	onMount(() => {
 		AOS.init();
 	});
@@ -14,11 +16,11 @@
 
 	<div
 		data-aos="fade-up"
-		class="shadow-2xl flex bg-[#2C3950] gap-5 md:px-5 md:py-5 rounded-md flex-col md:flex-row place-items-center text-[#F7D5B1]"
+		class="shadow-2xl flex bg-[#2C3950] gap-5 md:px-5 md:py-5 rounded-md flex-col lg:flex-row place-items-center text-[#F7D5B1]"
 	>
 			<img
-				class="w-full md:w-1/2 h-full object-cover rounded-md"
-				src="https://cdn.myportfolio.com/7bf13fc8-be3c-4bd4-96b0-ae0f57e2689c/d6fbba74-1025-4e3e-8ebe-896d1c6aa7c8.jpg?h=23c60cf1935d94e7970655ddbb52b044"
+				class="w-full lg:w-1/2 h-full object-cover rounded-md"
+				src={glensky}
 				alt="hello"
 			/>
 		<p class="">
