@@ -39,11 +39,9 @@
 				<IoLogoInstagram />
 			</IconButton>
 
-			<!-- <a href="mailto:3JWpF@example.com">
-				<IconButton link="https://www.instagram.com/glenchanchoong/">
+				<IconButton link="mailto:glendotcc@gmail.com">
 					<IoIosMail />
 				</IconButton>
-			</a> -->
 		</div>
 	</div>
 

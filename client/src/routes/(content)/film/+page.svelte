@@ -24,18 +24,18 @@
 		</div>
 
 		<!-- MasonryItem 5 times -->
-		<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+		<div class="grid grid-cols-1 md:grid-cols-2 gap-4 w-full">
 			<MasonryItem title="" img={singer} />
 			<MasonryItem title="" img={parking} />
 
-			<div class="col-span-2 w-full">
+			<div class="md:col-span-2 w-full">
 				<MasonryItem title="" img={bar} />
 			</div>
 
 			<MasonryItem title="" img={crowd} />
 			<MasonryItem title="" img={roof} />
 
-			<div class="col-span-2 w-full">
+			<div class="md:col-span-2 w-full">
 				<MasonryItem title="" img={fountain} />
 			</div>
 		</div>
