@@ -3,6 +3,10 @@
 <script>
 	import { page } from '$app/stores';
 	import '../../app.css';
+  import { dev } from '$app/environment';
+import { inject } from '@vercel/analytics';
+ 
+inject({ mode: dev ? 'development' : 'production' });
 
 
 	export let title = 'Glen Chan-Choong';
