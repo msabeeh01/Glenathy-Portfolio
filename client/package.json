@@ -29,6 +29,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"@vercel/analytics": "^1.2.2",
 		"aos": "^2.3.4",
 		"svelte-icons": "^2.1.0"
 	}
