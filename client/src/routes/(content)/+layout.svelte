@@ -29,12 +29,12 @@ function toggleNav() {
         <a class="hover:bg-white text-[#F7D5B1] transition hover:text-black rounded-md px-2 py-1" href="/" class:active={$page.url.pathname === '/'}
           >Home</a
         >
-        <a
+        <!-- <a
           class="hover:bg-white text-[#F7D5B1] transition hover:text-black rounded-md px-2 py-1"
           href="/about"
           class:active={$page.url.pathname === '/about'}
           >About</a
-        >
+        > -->
         <a
           class="hover:bg-white text-[#F7D5B1] transition hover:text-black rounded-md px-2 py-1"
           href="/work"
