@@ -1,91 +1,70 @@
 <script>
 	import '../app.css';
-	// component imports
-	import Button from '$lib/Button/Button.svelte';
-	import IconButton from '$lib/IconButton/IconButton.svelte';
-
-	// icons import
-	// @ts-ignore
-	import IoLogoInstagram from 'svelte-icons/io/IoLogoInstagram.svelte';
-	// @ts-ignore
-	import IoLogoLinkedin from 'svelte-icons/io/IoLogoLinkedin.svelte';
-	// @ts-ignore
-	import IoIosMail from 'svelte-icons/io/IoIosMail.svelte';
-
-	import { onMount } from 'svelte';
-	import AOS from 'aos';
-
-	import parking from '$lib/digital_images/film_images/parking.png';
-
-	onMount(() => {
-		AOS.init();
-	});
 	let name = 'Glen Chan-Choong';
+
+	//array of images and their description
+	const imgArray = [
+		{
+			src: '/digital_images/RY_LOGO_Final_-_Colour_Text_-_png.jpg',
+			desc: 'Rosewood Youth Redesign'
+		},
+		{
+			src: '/digital_images/illustrator_images/GCM 320 Proj4 - Chan-Choong Glen-01.png',
+			desc: 'Stoicism'
+		},
+		{
+			src: '/digital_images/illustrator_images/Hakka Designs Main-01.jpg',
+			desc: 'Hakka Design Logo'
+		},
+		{
+			src: '/digital_images/photoshop_images/Chan-Choong_Glen_Section4_CDCover.jpg',
+			desc: 'Memory Album Cover'
+		},
+		{
+			src: '/digital_images/photoshop_images/Chan-Choong_Glen_Section4_LTL.jpg',
+			desc: 'Neo Tokyo, Cyberwear'
+		}
+	];
 </script>
 
 <!-- children should be same width -->
-<div class="flex md:flex-row h-screen flex-col-reverse">
-	<div data-aos="fade-right" class="text w-full h-full">
-		<p class="">{name}</p>
+<div class="w-screen">
+	<!-- Main Container, seperate from page container -->
+	<div class="flex flex-col gap-[76px] py-[70px] mx-auto max-w-[1200px] h-full px-[70px]">
+		<!-- NAVBAR -->
+		<div class="flex justify-between text-[#3589FF] items-center">
+			<div class="text-2xl md:text-4xl lg:text-6xl font-extrabold">{name}</div>
+			<!-- <ul class="list-none flex flex-row gap-[40px]">
+				<a href="#">ITEM 1</a>
+				<a href="#">ITEM 2</a>
+				<a href="#">ITEM 3</a>
+			</ul> -->
+		</div>
 
-		<Button text="Enter" link="/work" />
+		<!-- SHORT INFO SECTION -->
+		<div class="w-full lg:w-[55%]">
+			<h1 class="text-[1.5em] leading-[1.2em]">
+				Hi, I’m {name}— a Toronto-based Graphic Designer with a passion for storytelling and a sharp
+				eye for detail. I’ve crafted visual identities, led creative projects, and brought ideas to
+				life through bold, effective design.
+			</h1>
+		</div>
 
-		<div class="iconButtonWrapper">
-			<IconButton link="https://www.linkedin.com/in/glen-chan-choong-59bb4a1a8/">
-				<IoLogoLinkedin />
-			</IconButton>
-
-			<IconButton link="https://www.instagram.com/hakka.designs/">
-				<IoLogoInstagram />
-			</IconButton>
-
-				<IconButton link="mailto:glendotcc@gmail.com">
-					<IoIosMail />
-				</IconButton>
+		<!-- 3X4 grid (400px X 400px) -->
+		<div class="flex flex-col md:grid md:grid-cols-2 lg:grid-cols-3 w-full">
+			{#each imgArray as item, index}
+				<a
+					href="#"
+					class="relative aspect-square w-full lg:max-w-[400px] bg-black group flex items-center justify-center"
+				>
+					<img src={item.src} alt="" class="h-full w-full object-cover" />
+					<div
+						class="absolute inset-0 flex text-white font-extrabold justify-center items-center bg-[#3589FF] opacity-0 group-hover:opacity-90 transition-opacity duration-300 pointer-events-none"
+					>
+						{item.desc}
+					</div>
+				</a>
+			{/each}
 		</div>
 	</div>
-
-	<div data-aos="fade-left" class="image w-full h-full">
-		<img alt="donut and coffee place" src={parking} />
-	</div>
 </div>
-
-<style>
-	.iconButtonWrapper {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		gap: 15px;
-	}
-
-	.text {
-		display: flex;
-		flex-direction: column;
-		text-align: center;
-		justify-content: center;
-		align-items: center;
-		gap: 30px;
-	}
-
-	p {
-		font-weight: 900;
-		font-size: 69px;
-		margin: 0;
-		font-family: 'Akira', sans-serif;
-		/* font-family: "Museo Slab W00 900"; */
-		color: #f7d5b1;
-	}
-
-	/* make the text responsive */
-	@media screen and (max-width: 600px) {
-		p {
-			font-size: 30px;
-		}
-	}
-
-	.image img {
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-	}
-</style>
