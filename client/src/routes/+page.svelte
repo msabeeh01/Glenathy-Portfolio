@@ -2,14 +2,13 @@
 	import { onMount } from 'svelte';
 	import '../app.css';
 	import { imgArray } from '../constants/data';
-	import { ScrollTrigger } from 'gsap/all';
-	import gsap from 'gsap';
+	import {gsap} from 'gsap';
 	import Typography from '../components/Typography/typography.svelte';
 	import ProjectGridItem from '../components/Typography/ProjectGrid/ProjectGridItem.svelte';
 	let name = 'Glen Chan-Choong';
 
 	if (typeof window !== 'undefined') {
-		gsap.registerPlugin(ScrollTrigger);
+		// gsap.registerPlugin(ScrollTrigger);
 	}
 
 	//array of images and their description
