@@ -1,6 +1,6 @@
 <script>
-	export let text = 'Button';
-    export let link = '/';
+	/** @type {{text?: string, link?: string}} */
+	let { text = 'Button', link = '/' } = $props();
 </script>
 
 <a href={link}>

@@ -1,14 +1,13 @@
 <script>
-	/**
-	 * @type {string}
-	 */
-	export let link
+	
+	/** @type {{link: string, children?: import('svelte').Snippet}} */
+	let { link, children } = $props();
 </script>
 
 <div>
 	<a href={link}>
 	<button class="hover:scale-105 transition duration-300 hover:bg-[#FBFFE0] hover:text-black hover:shadow-sm">
-		<slot />
+		{@render children?.()}
 	</button>
 </a>
 </div>

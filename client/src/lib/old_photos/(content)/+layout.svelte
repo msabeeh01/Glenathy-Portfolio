@@ -9,8 +9,9 @@ import { inject } from '@vercel/analytics';
 inject({ mode: dev ? 'development' : 'production' });
 
 
-	export let title = 'Glen Chan-Choong';
-	let isNavOpen = false;
+  /** @type {{title?: string, children?: import('svelte').Snippet}} */
+  let { title = 'Glen Chan-Choong', children } = $props();
+	let isNavOpen = $state(false);
 
 function toggleNav() {
   isNavOpen = !isNavOpen;
@@ -48,7 +49,7 @@ function toggleNav() {
         >
       </div>
     </nav>
-    <button class="block md:hidden" on:click={toggleNav}>
+    <button class="block md:hidden" onclick={toggleNav}>
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0  0  24  24" stroke="currentColor" class="h-6 w-6 text-gray-500">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4  6h16M4  12h16M4  18h16" />
       </svg>
@@ -65,7 +66,7 @@ function toggleNav() {
 {/if}
 
 <main class="flex flex-col h-full items-center w-full md:w-2/3 p-4">
-	<slot />
+	{@render children?.()}
 </main>
 
 

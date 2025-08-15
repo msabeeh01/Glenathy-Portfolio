@@ -3,13 +3,16 @@
 
 	//props
 	// @ts-ignore
-	export let title;
 	// @ts-ignore
-	export let year;
 	// @ts-ignore
-	export let image;
 	// @ts-ignore
-	export let href;
+	/** @type {{title: any, year: any, image: any, href: any}} */
+	let {
+		title,
+		year,
+		image,
+		href
+	} = $props();
 </script>
 
 <div

@@ -1,24 +1,23 @@
 <script>
 	// @ts-nocheck
-	export let img;
-	export let title = "";
-	export let height = 400;
-	let showTitle = false;
-	let isModalOpen = false; // Variable to track the modal state
+	/** @type {{img: any, title?: string, height?: number}} */
+	let { img, title = "", height = 400 } = $props();
+	let showTitle = $state(false);
+	let isModalOpen = $state(false); // Variable to track the modal state
 
 </script>
 
 <div
 	class="hover:scale-105 transition-all duration-200 flex group rounded-lg overflow-hidden"
-	on:mouseover={() => (showTitle = true)}
-	on:mouseout={() => (showTitle = false)}
-	on:focus={() => (showTitle = true)}
-	on:blur={() => (showTitle = false)}
+	onmouseover={() => (showTitle = true)}
+	onmouseout={() => (showTitle = false)}
+	onfocus={() => (showTitle = true)}
+	onblur={() => (showTitle = false)}
 	role="button"
 	tabindex="0"
 >
 	<div class="flex flex-col w-full justify-center">
-		<button on:click={() => (isModalOpen = !isModalOpen)} class="">
+		<button onclick={() => (isModalOpen = !isModalOpen)} class="">
 			<picture>
 				<img class="rounded-lg object-cover w-full" style="height: {height}px;" src={img} alt="" />
 			</picture>
@@ -39,8 +38,8 @@
 {#if isModalOpen}
 	<button
 		class="modal"
-		on:click={() => (isModalOpen = false)}
-		on:keydown={(e) => {
+		onclick={() => (isModalOpen = false)}
+		onkeydown={(e) => {
 			if (e.key === 'Escape') isModalOpen = false;
 		}}
 		aria-labelledby="modalTitle"
