@@ -3,10 +3,9 @@
 	import '../app.css';
 	import { imgArray } from '../constants/data';
 
-	import Typography from '../components/Typography/typography.svelte';
 	import ProjectGridItem from '../components/Typography/ProjectGrid/ProjectGridItem.svelte';
 
-	import { gsap } from 'gsap';
+	import {gsap} from 'gsap';
 	import { ScrollTrigger } from 'gsap/ScrollTrigger';
 	import { ScrollSmoother } from 'gsap/ScrollSmoother';
 	import Hero from '../components/home/Hero/Hero.svelte';
@@ -17,20 +16,21 @@
 	}
 
 	//array of images and their description
-	let ctx: gsap.Context;
+	let ctx : gsap.Context;
+	let smoother: ScrollSmoother 
 
 	onMount(() => {
 		// Add snap functionality
 		let snapSections = gsap.utils.toArray('.snap-section');
+		smoother = ScrollSmoother.create({
+		smooth: 1,
+		effects: true,
+
+		wrapper: '.smooth-wrapper',
+		content: '.smooth-content'
+	});
 
 		ctx = gsap.context(() => {
-			let smoother = ScrollSmoother.create({
-				smooth: 1,
-				effects: true,
-
-				wrapper: '.smooth-wrapper',
-				content: '.smooth-content'
-			});
 			gsap.fromTo(
 				'.name',
 				{
@@ -69,7 +69,7 @@
 					trigger: section,
 					start: 'top center',
 					end: 'bottom center',
-					onToggle: (self) => {
+					onToggle: (self: any) => {
 						if (self.isActive) {
 							smoother.scrollTo(section, true, 'center center');
 						}
