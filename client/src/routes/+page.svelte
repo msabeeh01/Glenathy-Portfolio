@@ -22,15 +22,15 @@
 	onMount(() => {
 		// Add snap functionality
 		let snapSections = gsap.utils.toArray('.snap-section');
-		let smoother = ScrollSmoother.create({
-			smooth: 1,
-			effects: true,
-
-			wrapper: '.smooth-wrapper',
-			content: '.smooth-content'
-		});
 
 		ctx = gsap.context(() => {
+			let smoother = ScrollSmoother.create({
+				smooth: 1,
+				effects: true,
+
+				wrapper: '.smooth-wrapper',
+				content: '.smooth-content'
+			});
 			gsap.fromTo(
 				'.name',
 				{
@@ -92,10 +92,12 @@
 
 		<div class="w-full bg-white mb-[300px]">
 			<div
-				class="flex flex-col py-[70px] mx-auto max-w-[1200px] min-h-screen  projectAnimationTrigger snap-section"
+				class="flex flex-col py-[70px] mx-auto max-w-[1200px] min-h-screen projectAnimationTrigger snap-section"
 			>
 				<!-- 3X4 grid (400px X 400px) -->
-				<div class="flex flex-col md:grid md:grid-cols-2 lg:grid-cols-3 w-full h-full overflow-hidden">
+				<div
+					class="flex flex-col md:grid md:grid-cols-2 lg:grid-cols-3 w-full h-full overflow-hidden"
+				>
 					{#each imgArray as item, index}
 						<div class="projectitem">
 							<ProjectGridItem {item} />
