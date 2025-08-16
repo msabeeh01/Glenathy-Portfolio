@@ -7,9 +7,9 @@
 
 	import {gsap} from 'gsap';
 	import { ScrollTrigger } from 'gsap/ScrollTrigger';
-	import { ScrollSmoother } from 'gsap/ScrollSmoother.js';
 	import Hero from '../components/home/Hero/Hero.svelte';
 	import Footer from '../components/navigation/Footer.svelte';
+	import { ScrollSmoother } from 'gsap/all';
 
 	if (typeof window !== 'undefined') {
 		gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
@@ -17,7 +17,7 @@
 
 	//array of images and their description
 	let ctx : gsap.Context;
-	let smoother: ScrollSmoother 
+	let smoother : ScrollSmoother;
 
 	onMount(() => {
 		// Add snap functionality
