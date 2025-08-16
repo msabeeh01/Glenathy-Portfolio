@@ -5,30 +5,27 @@
 
 	import ProjectGridItem from '../components/Typography/ProjectGrid/ProjectGridItem.svelte';
 
-	import {gsap} from 'gsap';
+	import { gsap } from 'gsap';
 	import { ScrollTrigger } from 'gsap/ScrollTrigger';
 	import Hero from '../components/home/Hero/Hero.svelte';
 	import Footer from '../components/navigation/Footer.svelte';
 	import { ScrollSmoother } from 'gsap/all';
 
-	if (typeof window !== 'undefined') {
-		gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
-	}
-
 	//array of images and their description
-	let ctx : gsap.Context;
-	let smoother : ScrollSmoother;
+	let ctx: gsap.Context;
+	let smoother: ScrollSmoother;
 
 	onMount(() => {
+		gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 		// Add snap functionality
 		let snapSections = gsap.utils.toArray('.snap-section');
 		smoother = ScrollSmoother.create({
-		smooth: 1,
-		effects: true,
+			smooth: 1,
+			effects: true,
 
-		wrapper: '.smooth-wrapper',
-		content: '.smooth-content'
-	});
+			wrapper: '.smooth-wrapper',
+			content: '.smooth-content'
+		});
 
 		ctx = gsap.context(() => {
 			gsap.fromTo(
