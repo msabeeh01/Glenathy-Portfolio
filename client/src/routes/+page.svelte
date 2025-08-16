@@ -56,7 +56,6 @@
 					trigger: '.projectAnimationTrigger',
 					start: 'top center',
 					end: 'bottom center',
-					markers: true,
 					toggleActions: 'restart reverse restart reverse'
 				}
 			});
