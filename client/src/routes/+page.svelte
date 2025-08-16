@@ -2,19 +2,33 @@
 	import { onMount } from 'svelte';
 	import '../app.css';
 	import { imgArray } from '../constants/data';
-	import {gsap} from 'gsap';
+
 	import Typography from '../components/Typography/typography.svelte';
 	import ProjectGridItem from '../components/Typography/ProjectGrid/ProjectGridItem.svelte';
-	let name = 'Glen Chan-Choong';
+
+	import { gsap } from 'gsap';
+	import { ScrollTrigger } from 'gsap/ScrollTrigger';
+	import { ScrollSmoother } from 'gsap/ScrollSmoother';
+	import Hero from '../components/home/Hero/Hero.svelte';
 
 	if (typeof window !== 'undefined') {
-		// gsap.registerPlugin(ScrollTrigger);
+		gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 	}
 
 	//array of images and their description
 	let ctx: gsap.Context;
 
 	onMount(() => {
+		// Add snap functionality
+		let snapSections = gsap.utils.toArray('.snap-section');
+		let smoother = ScrollSmoother.create({
+			smooth: 1,
+			effects: true,
+
+			wrapper: '.smooth-wrapper',
+			content: '.smooth-content'
+		});
+
 		ctx = gsap.context(() => {
 			gsap.fromTo(
 				'.name',
@@ -25,27 +39,44 @@
 				{
 					yPercent: 0,
 					opacity: 1,
-					duration: 0.5
+					duration: 1
 				}
 			);
 
-			gsap.fromTo(
-				'.projectitem',
-				{
-					yPercent: 100,
-					opacity: 0
-				},
-				{
-					yPercent: 0,
-					opacity: 1,
-					duration: 0.5,
-					stagger: 0.1,
-					ease: 'power2.out',
-					delay: 0.2
+			gsap.set('.projectitem', {
+				yPercent: 100,
+				opacity: 0
+			});
+
+			// Animate each item individually
+			gsap.to('.projectitem', {
+				yPercent: 0,
+				opacity: 1,
+				duration: 0.8,
+				stagger: 0.1,
+				scrollTrigger: {
+					trigger: '.projectAnimationTrigger',
+					start: 'top center',
+					end: 'bottom center',
+					markers: true,
+					toggleActions: 'restart reverse restart reverse'
 				}
-			);
+			});
+
+			snapSections.forEach((section: any, i) => {
+				ScrollTrigger.create({
+					trigger: section,
+					start: 'top center',
+					end: 'bottom center',
+					onToggle: (self) => {
+						if (self.isActive) {
+							smoother.scrollTo(section, true, 'center center');
+						}
+					}
+				});
+			});
 		});
-	
+
 		return () => {
 			ctx.revert();
 		};
@@ -53,37 +84,24 @@
 </script>
 
 <!-- children should be same width -->
-<div class="w-screen bg-white mb-[300px]">
+<div class="w-screen bg-white smooth-wrapper">
 	<!-- Main Container, seperate from page container -->
-	<div class="flex flex-col gap-[76px] py-[70px] mx-auto max-w-[1200px] h-full px-[70px] z-10">
-		<!-- NAVBAR -->
-		<div class="flex justify-between text-[#3589FF] items-center overflow-hidden pb-2">
-			<div class="name">
-				<Typography type="heading" as="h1">{name}</Typography>
-			</div>
-			<!-- <ul class="list-none flex flex-row gap-[40px]">
-				<a href="#">ITEM 1</a>
-				<a href="#">ITEM 2</a>
-				<a href="#">ITEM 3</a>
-			</ul> -->
-		</div>
+	<div class="flex flex-col smooth-content z-10">
+		<Hero />
 
-		<!-- SHORT INFO SECTION -->
-		<div class="w-full lg:w-[55%] h-fit overflow-hidden">
-			<Typography type="paragraph" class="name" as="p">
-				Hi, I’m {name}— a Toronto-based Graphic Designer with a passion for storytelling and a sharp
-				eye for detail. I’ve crafted visual identities, led creative projects, and brought ideas to
-				life through bold, effective design.
-			</Typography>
-		</div>
-
-		<!-- 3X4 grid (400px X 400px) -->
-		<div class="flex flex-col md:grid md:grid-cols-2 lg:grid-cols-3 w-full overflow-hidden">
-			{#each imgArray as item, index}
-				<div class="projectitem">
-					<ProjectGridItem {item} />
+		<div class="w-full bg-white mb-[300px]">
+			<div
+				class="flex flex-col py-[70px] mx-auto max-w-[1200px] min-h-screen  projectAnimationTrigger snap-section"
+			>
+				<!-- 3X4 grid (400px X 400px) -->
+				<div class="flex flex-col md:grid md:grid-cols-2 lg:grid-cols-3 w-full h-full overflow-hidden">
+					{#each imgArray as item, index}
+						<div class="projectitem">
+							<ProjectGridItem {item} />
+						</div>
+					{/each}
 				</div>
-			{/each}
+			</div>
 		</div>
 	</div>
 
