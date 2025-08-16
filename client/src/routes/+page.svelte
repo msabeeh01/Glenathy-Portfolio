@@ -8,7 +8,7 @@
 
 	import { gsap } from 'gsap';
 	import { ScrollTrigger } from 'gsap/ScrollTrigger';
-	import { ScrollSmoother } from 'gsap/dist/ScrollSmoother';
+	import { ScrollSmoother } from 'gsap/ScrollSmoother';
 	import Hero from '../components/home/Hero/Hero.svelte';
 	import Footer from '../components/navigation/Footer.svelte';
 

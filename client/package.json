@@ -32,6 +32,7 @@
 	"dependencies": {
 		"@vercel/analytics": "^1.2.2",
 		"aos": "^2.3.4",
+		"gsap": "^3.13.0",
 		"svelte-icons": "^2.1.0"
 	}
 }
