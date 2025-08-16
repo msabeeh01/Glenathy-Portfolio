@@ -9,8 +9,8 @@
 	class="bg-gray-50 w-full h-screen relative flex flex-col items-center justify-center snap-section"
 >
 	<div>
-		<div class="flex text-[#3589FF] text-center items-center overflow-hidden pb-2">
-			<div class="name flex flex-col w-full items-center text-center">
+		<div class="flex text-[rgb(53,137,255)] text-center items-center overflow-hidden pb-2">
+			<div class="name flex flex-col w-full items-center text-center z-10">
 				<Typography type="heading" as="h1">{name.toUpperCase()}</Typography>
 				<Typography type="paragraph" class="name w-[55%]" as="p">
 					Hi, I’m {name}— a Toronto-based Graphic Designer with a passion for storytelling and a
@@ -27,26 +27,26 @@
 	</div>
 
 	<!-- random shapes in the background of hero section -->
-	<div class="hidden md:block">
+	<div class="hidden md:block ">
 		<AnimatedShape
 			shape="circle"
-			color="#3a5780"
+			color="rgba(53,137,255, 0.2)"
 			animation="updown"
 			size={128}
-			className="absolute top-10 left-80 bg-gradient-to-t from-[#3589FF] to-[#3a5780]"
+			className="absolute top-40 left-80"
 		/>
 		<AnimatedShape
 			shape="square"
-			color="#3a5780"
+			color="rgba(53,137,255, 0.1)"
 			animation="rotate"
-			size={100}
+			size={256}
 			className="absolute top-80 right-60"
 		/>
 		<AnimatedShape
 			shape="square"
-			color="#3a5780"
+			color="rgba(53,137,255, 0.3)"
 			animation="rotate"
-			size={62}
+			size={128}
 			className="absolute bottom-40 left-[30%]"
 		/>
 	</div>

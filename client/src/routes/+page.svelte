@@ -10,6 +10,7 @@
 	import { ScrollTrigger } from 'gsap/ScrollTrigger';
 	import { ScrollSmoother } from 'gsap/ScrollSmoother';
 	import Hero from '../components/home/Hero/Hero.svelte';
+	import Footer from '../components/navigation/Footer.svelte';
 
 	if (typeof window !== 'undefined') {
 		gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
@@ -105,7 +106,5 @@
 		</div>
 	</div>
 
-	<div class="text-white p-4 bg-[#3589FF] fixed bottom-0 w-full flex items-end h-[300px] -z-10">
-		<h2>Contact Info</h2>
-	</div>
+	<Footer />
 </div>
