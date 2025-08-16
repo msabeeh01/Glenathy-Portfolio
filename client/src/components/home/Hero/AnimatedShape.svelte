@@ -1,6 +1,5 @@
 <script lang="ts">
 	import { onMount } from "svelte";
-    import {gsap} from 'gsap';
 	import { random } from "gsap/gsap-core";
 
     let { shape, color, animation, size, className} : { shape: string, color: string, animation: string, size: number, className: string} = $props();
